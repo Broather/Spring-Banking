@@ -15,19 +15,12 @@ public class BankAccount {
             allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator = "account-sequence")
-    private final Long accountNumber;
+    private Long accountNumber;
     private float balance;
 
-    public BankAccount(Long accountNumber) {
-        this.accountNumber = accountNumber;
-        this.balance = 0f;
-    }
+    public BankAccount() {}
 
-    public BankAccount(Long accountNumber, float balance) {
-        this.accountNumber = accountNumber;
-        if (balance < 0) {
-            System.out.println("Can't create an account with a negative balance");
-        }
+    public BankAccount(float balance) {
         this.balance = balance;
     }
 
